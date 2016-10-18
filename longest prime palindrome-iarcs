@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+bool isprime(int z)
+{
+    int count=0;
+    for(int j=1;j<=z;j++)
+    {
+        if(z%j==0)
+        {
+            count++;
+        }
+    }
+    if(count==2)
+    {//cout<<"Prime:"<<z;
+        return 1;}
+    else
+    {return 0;}
+}
+
+bool ispalindrome(int y)
+{
+    int x=y,rev=0,z;
+    while(y!=0)
+    {
+        z=y%10;
+        rev=(rev*10)+z;
+        y=y/10;
+    }
+    if(rev==x)
+    {
+        //cout<<"Rev="<<rev;
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main()
+{
+    int n,i;
+    cin>>n;
+    for(i=n;i!=0;i++)
+    {
+       
+            if(ispalindrome(i)&&isprime(i))
+            {
+                cout<<i;
+                break;
+            }
+        
+    }
+}
+
